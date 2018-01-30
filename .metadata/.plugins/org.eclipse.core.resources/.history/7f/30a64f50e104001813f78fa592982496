@@ -1,0 +1,19 @@
+package com.capgemini.exception;
+
+
+class InsufficientInitialAmountException {
+	
+}
+
+class InvalidAccountNumberException{
+	
+}
+
+
+class InsufficientBalanceException {
+	
+}
+
+
+
+

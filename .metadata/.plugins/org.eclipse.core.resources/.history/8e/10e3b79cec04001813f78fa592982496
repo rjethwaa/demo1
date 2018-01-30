@@ -1,0 +1,38 @@
+package com.capgemini.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import com.capgemini.beans.Account;
+import com.capgemini.repo.AccountRepo;
+import com.capgemini.repo.impl.AccountRepoImpl;
+import com.capgemini.service.AccountService;
+import com.capgemini.service.impl.AccountServiceImpl;
+
+public class TestBankApplication {
+
+	@Mock Account account = new Account(101,2000);
+	@Mock private AccountService accountService;
+
+	@Test
+	void compareBankAccount()
+	{
+		MockitoAnnotations.initMocks(this);
+		
+		accountService = new AccountServiceImpl(account);
+
+	}
+	
+	
+	
+/*	
+*/
+
+
+
+
+
+}

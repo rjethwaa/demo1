@@ -1,0 +1,13 @@
+package com.capgemini.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TestBankApplication {
+
+	@Mock
+	AccountRepo accountRepo;
+	AccountService accountService;
+
+}

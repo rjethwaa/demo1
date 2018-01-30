@@ -1,0 +1,60 @@
+package com.capgemini.service.impl;
+
+import com.capgemini.beans.Account;
+import com.capgemini.exception.InsufficientBalanceException;
+import com.capgemini.exception.InsufficientInitialAmountException;
+import com.capgemini.exception.InvalidAccountNumberException;
+import com.capgemini.repo.AccountRepo;
+import com.capgemini.repo.impl.AccountRepoImpl;
+import com.capgemini.service.AccountService;
+
+public class AccountServiceImpl implements AccountService {
+
+	Account account;
+	public AccountRepo accountRepo;
+	public AccountServiceImpl(AccountRepo accountRepo)
+	{
+		this.accountRepo = accountRepo;
+		account = new Account();
+		accountRepo = new  AccountRepoImpl();
+	}
+	@Override
+	public Account createAccount(int accountNumber, int amount) throws InsufficientInitialAmountException {
+		// TODO Auto-generated method stubi
+
+		if (amount < 500) {
+			throw new InsufficientInitialAmountException();
+		}
+		else
+		{
+			
+			account.setAccountNumber(accountNumber);
+			account.setAmount(amount);
+			accountRepo.save(account);
+			System.out.println("Account Created Successfully"+ account.getAmount());
+			
+			return null;
+		}
+		
+		
+	}
+
+	@Override
+	public int depositAmount(Account account, int amount) {
+		// TODO Auto-generated method stub
+			System.out.println("::::"+account.getAmount());
+		
+		
+		this.account.setAmount(amount+account.getAmount());
+		
+		return this.account.getAmount();
+	}
+
+	@Override
+	public int withdrawAmount(int accountNumber, int amount)
+			throws InvalidAccountNumberException, InsufficientBalanceException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

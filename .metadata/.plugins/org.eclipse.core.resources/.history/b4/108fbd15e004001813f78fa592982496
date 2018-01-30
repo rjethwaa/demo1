@@ -1,0 +1,7 @@
+package com.capgemini.repo.impl;
+
+import com.capgemini.repo.AccountRepo;
+
+public class AccountRepoImpl implements AccountRepo {
+
+}

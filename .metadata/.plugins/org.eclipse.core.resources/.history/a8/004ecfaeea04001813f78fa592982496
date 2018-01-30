@@ -1,0 +1,23 @@
+package com.capgemini.repo.impl;
+
+import com.capgemini.beans.Account;
+import com.capgemini.repo.AccountRepo;
+
+public class AccountRepoImpl implements AccountRepo {
+	Account account;
+	@Override
+	public boolean save(Account acc) {
+		// TODO Auto-generated method stub
+		
+		account.setAccountNumber(acc.accountNumber);
+		account.setAmount(acc.amount);
+		return false;
+	}
+
+	@Override
+	public Account searchAccount(int accountNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

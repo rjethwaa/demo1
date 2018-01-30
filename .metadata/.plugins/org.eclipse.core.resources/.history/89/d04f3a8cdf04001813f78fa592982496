@@ -1,0 +1,6 @@
+package com.capgemini.repo;
+
+public interface AccountRepo {
+bolean save(Account acc);
+
+}

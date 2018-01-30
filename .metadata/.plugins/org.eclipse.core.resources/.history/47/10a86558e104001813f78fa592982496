@@ -1,0 +1,14 @@
+package com.capgemini.service;
+
+import com.capgemini.beans.Account;
+
+public interface AccountService {
+
+	Account  createAccount(int accountNumber,int amount) throws  InsufficientInitialAmountException;
+	int    depositAmount(int accountNumber,int amount)throws  InvalidAccountNumberExceptionl;
+	int   withdrawAmount(int accountNumber,int amount)  throws InvalidAccountNumberException,InsufficientBalanceException;
+
+	
+	
+	
+}

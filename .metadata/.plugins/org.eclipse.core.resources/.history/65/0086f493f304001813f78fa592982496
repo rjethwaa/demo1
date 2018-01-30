@@ -1,0 +1,72 @@
+package com.capgemini.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import com.capgemini.beans.Account;
+import com.capgemini.exception.InsufficientInitialAmountException;
+import com.capgemini.exception.InvalidAccountNumberException;
+import com.capgemini.repo.AccountRepo;
+import com.capgemini.repo.impl.AccountRepoImpl;
+import com.capgemini.service.AccountService;
+import com.capgemini.service.impl.AccountServiceImpl;
+
+public class TestBankApplication {
+
+	@Mock Account account;
+	 AccountService accountService;
+	 AccountRepo accountRepo;
+	@Before
+	public void inittail()
+	{
+		MockitoAnnotations.initMocks(this);
+		AccountRepo accountRepo = new AccountRepoImpl();
+		accountService = new AccountServiceImpl(accountRepo);
+	}
+	@Test
+	public void compareBankAccount()
+	{
+		
+
+		try {
+			accountService.createAccount(101, 5000);
+		} catch (InsufficientInitialAmountException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+
+		
+	}
+	
+	@Test
+	public void checkDeposit()
+	{
+		
+		try {
+			int temp = accountService.depositAmount(101, 500);
+			
+			assertEquals(temp, 5500);
+		} catch (InvalidAccountNumberException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+		
+	}
+	
+	
+/*	
+*/
+
+
+
+
+
+}

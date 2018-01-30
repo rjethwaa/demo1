@@ -1,0 +1,15 @@
+package com.capgemini.repo;
+
+import com.capgemini.beans.Account;
+
+public interface AccountRepo {
+
+	/**
+	 * @param acc
+	 * @return
+	 */
+	boolean save(Account acc);
+	
+	Account searchAccount(int accountNumber);
+
+}

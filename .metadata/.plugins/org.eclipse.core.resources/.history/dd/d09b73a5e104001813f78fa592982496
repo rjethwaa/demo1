@@ -1,0 +1,20 @@
+package com.capgemini.exception;
+
+import com.capgemini.exception;
+
+class InsufficientInitialAmountException extends Exception {
+	
+}
+
+class InvalidAccountNumberException extends Exception{
+	
+}
+
+
+class InsufficientBalanceException extends Exception{
+	
+}
+
+
+
+

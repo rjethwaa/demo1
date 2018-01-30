@@ -1,0 +1,21 @@
+package com.capgemini.exception;
+
+public interface UserException {
+
+}
+class InsufficientInitialAmountException implements UserException{
+	
+}
+
+class InvalidAccountNumberException implements UserException{
+	
+}
+
+
+class InsufficientBalanceException implements UserException{
+	
+}
+
+
+
+
