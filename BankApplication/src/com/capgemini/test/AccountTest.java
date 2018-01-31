@@ -19,7 +19,8 @@ import static org.mockito.Mockito.when;
  * @author rjethwa
  *
  */
-public class AccountTest { 
+
+ class AccountTest { 
 	AccountService accountService;
 
 	@Mock
